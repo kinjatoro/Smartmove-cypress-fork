@@ -1,8 +1,12 @@
-# Requerimientos
+# Requerimientos y enlaces utiles
 
 #### [instalar Node.js](https://nodejs.org/)
 
 #### [conocer Cypress](https://www.cypress.io/app)
+
+#### [entender selectores JQuery](https://www.w3schools.com/jquery/jquery_selectors.asp)
+
+#### [cheatsheet selectores JQuery](https://www.w3schools.com/jquery/jquery_ref_selectors.asp)
 
 # Instrucciones
 
