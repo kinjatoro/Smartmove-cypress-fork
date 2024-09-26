@@ -12,12 +12,12 @@ steps:
   # Instalar Node.js en el agente si no está disponible
   - task: UseNode@1
     inputs:
-      version: '16.x'  # Asegúrate de usar la misma versión de Node.js que requiere tu proyecto
+      version: '18.x'  # Cambia a la versión 18.x de Node.js
 
-  # Instalar las dependencias necesarias
+  # Instalar las dependencias necesarias para Cypress
   - script: |
       sudo apt-get update
-      sudo apt-get install -y xvfb libgtk-3-0 libx11-xcb1 libxtst6 libxss1 libatk1.0-0
+      sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
     displayName: 'Instalar dependencias de Cypress'
 
   # Instalar las dependencias del proyecto (incluyendo Cypress)
