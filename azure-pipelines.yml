@@ -17,7 +17,7 @@ steps:
   # Instalar las dependencias necesarias
   - script: |
       sudo apt-get update
-      sudo apt-get install -y xvfb libgtk-3-0 libx11-xcb1 libxtst6 libxss1 libasound2 libatk1.0-0
+      sudo apt-get install -y xvfb libgtk-3-0 libx11-xcb1 libxtst6 libxss1 libatk1.0-0
     displayName: 'Instalar dependencias de Cypress'
 
   # Instalar las dependencias del proyecto (incluyendo Cypress)
