@@ -9,15 +9,15 @@ pool:
 steps:
   - checkout: self  # Clonar el repositorio
 
-  # Instalar Node.js en el agente si no está disponible
+  # Instalar Node.js en el agente
   - task: UseNode@1
     inputs:
-      version: '18.x'  # Cambia a la versión 18.x de Node.js
+      version: '18.x'  # Usa la versión 18.x de Node.js
 
-  # Instalar las dependencias necesarias para Cypress
+  # Instalar dependencias de Cypress
   - script: |
       sudo apt-get update
-      sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+      sudo apt-get install -y libgtk2.0-0t64 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
     displayName: 'Instalar dependencias de Cypress'
 
   # Instalar las dependencias del proyecto (incluyendo Cypress)
