@@ -14,11 +14,11 @@ steps:
     inputs:
       version: '16.x'  # Asegúrate de usar la misma versión de Node.js que requiere tu proyecto
 
-  # Instalar Xvfb
+  # Instalar las dependencias necesarias
   - script: |
       sudo apt-get update
-      sudo apt-get install -y xvfb
-    displayName: 'Instalar Xvfb'
+      sudo apt-get install -y xvfb libgtk-3-0 libx11-xcb1 libxtst6 libxss1 libasound2 libatk1.0-0
+    displayName: 'Instalar dependencias de Cypress'
 
   # Instalar las dependencias del proyecto (incluyendo Cypress)
   - script: |
