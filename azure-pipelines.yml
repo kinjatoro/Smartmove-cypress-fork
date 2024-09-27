@@ -1,13 +1,22 @@
 trigger:
   branches:
     include:
-      - main  # Define la rama que activará el pipeline
+      - main  # Esto activará el pipeline cuando haya un commit en la rama main del frontend
+
+resources:
+  repositories:
+    - repository: cypressRepo  # Alias que usarás para referenciar el repositorio de Cypress
+      type: git
+      url: 'https://github.com/kinjatoro/Smartmove-cypress-fork.git'  # Ruta del repositorio de Cypress
 
 pool:
   name: casa  # Pool de agentes en EC2 (o cualquier pool que estés usando)
 
 steps:
-  - checkout: self  # Clonar el repositorio
+  - checkout: self  # Clona el repositorio del frontend
+
+  # Hacer checkout del repositorio de Cypress
+  - checkout: cypressRepo  # Clona el repositorio de Cypress
 
   # Instalar Node.js en el agente
   - task: UseNode@1
@@ -16,11 +25,9 @@ steps:
 
   # Instalar dependencias de Cypress
   - script: |
-      sudo apt-get clean
       sudo apt-get update
-      sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libxtst6 xauth xvfb libasound2-dev
+      sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
     displayName: 'Instalar dependencias de Cypress'
-
 
   # Instalar las dependencias del proyecto (incluyendo Cypress)
   - script: |
