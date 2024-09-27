@@ -51,4 +51,4 @@ steps:
       git commit -m "Actualizando frontend después de pruebas exitosas" || echo "No hay cambios para hacer commit"
       git push origin main  # Cambia la rama según sea necesario
     displayName: 'Hacer commit de cambios'
-    condition: succeeded('Ejecutar pruebas de Cypress')  # Solo se ejecuta si las pruebas pasan
+    condition: succeeded()  # Solo se ejecuta si todos los pasos anteriores son exitosos
